@@ -13,6 +13,7 @@ class InvtDataWidget extends StatelessWidget {
         crossAxisSpacing: 0,
         mainAxisSpacing: 0,
         childAspectRatio: 2,
+        physics: NeverScrollableScrollPhysics(),
         children: [
           Container(
             padding: EdgeInsets.only(left: 16.0),

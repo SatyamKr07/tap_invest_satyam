@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tap_invest/pages/deal_details_page/widgets/clients_backed_by.dart';
 import 'package:tap_invest/pages/deal_details_page/widgets/invt_data_widget.dart';
 import 'package:tap_invest/utils/my_text_styles.dart';
 
@@ -34,6 +35,7 @@ class DealDetailsPage extends StatelessWidget {
             padding: const EdgeInsets.only(left: 24.0, right: 24),
             child: ListView(
               shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
               children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -72,8 +74,15 @@ class DealDetailsPage extends StatelessWidget {
               ],
             ),
           ),
-          Divider(),
-          
+          SizedBox(height: 16),
+          Divider(thickness: 1),
+          SizedBox(height: 16),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 0),
+            child: ClientsBackedBy(),
+          ),
+          SizedBox(height: 16),
+          Divider(thickness: 1),
         ],
       ),
     );
