@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:tap_invest/pages/purchasing_page/widgets/swipe_to_pay_widget.dart';
+import 'package:tap_invest/providers/pruchasing_provider.dart';
+import 'package:tap_invest/utils/my_extensions.dart';
 
 import '../../utils/my_text_styles.dart';
 
@@ -8,6 +11,8 @@ class PruchasingPage2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final PurchasingProvider purchasingProvider =
+        Provider.of<PurchasingProvider>(context);
     return Scaffold(
       body: ListView(
         shrinkWrap: true,
@@ -94,19 +99,45 @@ class PruchasingPage2 extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Center(
-                  child: TextField(
-                    textAlign: TextAlign.center,
-                    autofocus: true,
-                    decoration: InputDecoration(
-                      hintText: 'Min 50000',
-                      enabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.transparent),
-                      ),
-                      focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.transparent),
-                      ),
-                    ),
+                  child: Consumer<PurchasingProvider>(
+                    builder: (context, purchasingProvider, _) {
+                      return TextField(
+                        textAlign: TextAlign.center,
+                        autofocus: true,
+                        keyboardType: TextInputType.number,
+                        decoration: InputDecoration(
+                          hintText: 'Min 50000',
+                          enabledBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.transparent),
+                          ),
+                          focusedBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.transparent),
+                          ),
+                        ),
+                        onChanged: (value) {
+                          return purchasingProvider.setAmount(int.parse(value));
+                        },
+                      );
+                    },
                   ),
+
+                  //  TextField(
+                  //   textAlign: TextAlign.center,
+                  //   autofocus: true,
+                  //   keyboardType: TextInputType.number,
+                  //   decoration: InputDecoration(
+                  //     hintText: 'Min 50000',
+                  //     enabledBorder: UnderlineInputBorder(
+                  //       borderSide: BorderSide(color: Colors.transparent),
+                  //     ),
+                  //     focusedBorder: UnderlineInputBorder(
+                  //       borderSide: BorderSide(color: Colors.transparent),
+                  //     ),
+                  //   ),
+                  //   onChanged: (value) {
+                  //     return purchasingProvider.setAmount(int.parse(value));
+                  //   },
+                  // ),
                 ),
               ],
             ),
@@ -139,14 +170,6 @@ class PruchasingPage2 extends StatelessWidget {
                           width: double.infinity,
                           padding: const EdgeInsets.symmetric(
                               horizontal: 20, vertical: 16),
-                          decoration: BoxDecoration(
-                              // border: Border.only(
-                              //   left: BorderSide(color: Color(0xFFE4E4E7)),
-                              //   top: BorderSide(color: Color(0xFFE4E4E7)),
-                              //   right: BorderSide(color: Color(0xFFE4E4E7)),
-                              //   bottom: BorderSide(width: 1, color: Color(0xFFE4E4E7)),
-                              // ),
-                              ),
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
                             mainAxisAlignment: MainAxisAlignment.start,
@@ -154,16 +177,8 @@ class PruchasingPage2 extends StatelessWidget {
                             children: [
                               SizedBox(
                                 width: 155,
-                                child: Text(
-                                  'Total Returns',
-                                  style: TextStyle(
-                                    color: Color(0xFF475569),
-                                    fontSize: 12,
-                                    fontFamily: 'Inter',
-                                    fontWeight: FontWeight.w400,
-                                    height: 0.12,
-                                  ),
-                                ),
+                                child: Text('Total Returns',
+                                    style: MyTestStyles.Inter40012),
                               ),
                               const SizedBox(width: 4),
                               Expanded(
@@ -173,28 +188,17 @@ class PruchasingPage2 extends StatelessWidget {
                                     mainAxisSize: MainAxisSize.min,
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                        CrossAxisAlignment.center,
                                     children: [
+                                      Text('₹',
+                                          style:
+                                              MyTestStyles.Inter50014.copyWith(
+                                                  color: Colors.grey)),
                                       Text(
-                                        '₹',
-                                        style: TextStyle(
-                                          color: Color(0xFFA8A29E),
-                                          fontSize: 14,
-                                          fontFamily: 'Inter',
-                                          fontWeight: FontWeight.w500,
-                                          height: 0.11,
-                                        ),
-                                      ),
-                                      const SizedBox(width: 2),
-                                      Text(
-                                        '56,555',
-                                        style: TextStyle(
-                                          color: Color(0xFF475569),
-                                          fontSize: 16,
-                                          fontFamily: 'Inter',
-                                          fontWeight: FontWeight.w500,
-                                          height: 0.09,
-                                        ),
+                                        purchasingProvider.totalReturns
+                                            .currencyFormat()
+                                            .toString(),
+                                        style: MyTestStyles.Inter50016,
                                       ),
                                     ],
                                   ),
