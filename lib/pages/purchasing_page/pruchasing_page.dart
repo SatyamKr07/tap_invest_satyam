@@ -120,24 +120,6 @@ class PruchasingPage2 extends StatelessWidget {
                       );
                     },
                   ),
-
-                  //  TextField(
-                  //   textAlign: TextAlign.center,
-                  //   autofocus: true,
-                  //   keyboardType: TextInputType.number,
-                  //   decoration: InputDecoration(
-                  //     hintText: 'Min 50000',
-                  //     enabledBorder: UnderlineInputBorder(
-                  //       borderSide: BorderSide(color: Colors.transparent),
-                  //     ),
-                  //     focusedBorder: UnderlineInputBorder(
-                  //       borderSide: BorderSide(color: Colors.transparent),
-                  //     ),
-                  //   ),
-                  //   onChanged: (value) {
-                  //     return purchasingProvider.setAmount(int.parse(value));
-                  //   },
-                  // ),
                 ),
               ],
             ),
@@ -145,249 +127,169 @@ class PruchasingPage2 extends StatelessWidget {
           SizedBox(height: 24),
           Divider(thickness: 1),
           SizedBox(height: 24),
-          Expanded(
-            child: Container(
-              width: double.infinity,
-              clipBehavior: Clip.antiAlias,
-              decoration: ShapeDecoration(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(6)),
-              ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    width: double.infinity,
-                    height: 168,
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          width: double.infinity,
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 20, vertical: 16),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              SizedBox(
-                                width: 155,
-                                child: Text('Total Returns',
-                                    style: MyTestStyles.Inter40012),
-                              ),
-                              const SizedBox(width: 4),
-                              Expanded(
-                                child: Container(
-                                  height: 24,
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Text('₹',
-                                          style:
-                                              MyTestStyles.Inter50014.copyWith(
-                                                  color: Colors.grey)),
-                                      Text(
-                                        purchasingProvider.totalReturns
-                                            .currencyFormat()
-                                            .toString(),
-                                        style: MyTestStyles.Inter50016,
-                                      ),
-                                    ],
+          Container(
+            width: double.infinity,
+            clipBehavior: Clip.antiAlias,
+            decoration: ShapeDecoration(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(6)),
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  width: double.infinity,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        width: double.infinity,
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 16),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            SizedBox(
+                              child: Text('Total Returns',
+                                  style: MyTestStyles.Inter40012),
+                            ),
+                            const SizedBox(width: 4),
+                            Container(
+                              height: 24,
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Text('₹',
+                                      style: MyTestStyles.Inter50014.copyWith(
+                                          color: Colors.grey)),
+                                  Text(
+                                    purchasingProvider.totalReturns
+                                        .currencyFormat()
+                                        .toString(),
+                                    style: MyTestStyles.Inter50016,
                                   ),
-                                ),
+                                ],
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
-                        Container(
-                          width: double.infinity,
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 20, vertical: 16),
-                          decoration: BoxDecoration(
-                              // border: Border.only(
-                              //   left: BorderSide(color: Color(0xFFE4E4E7)),
-                              //   top: BorderSide(color: Color(0xFFE4E4E7)),
-                              //   right: BorderSide(color: Color(0xFFE4E4E7)),
-                              //   bottom: BorderSide(width: 1, color: Color(0xFFE4E4E7)),
-                              // ),
+                      ),
+                      Divider(),
+                      Container(
+                        width: double.infinity,
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 16),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Container(
+                              height: 18,
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Text('Net Yield',
+                                      style: MyTestStyles.Inter40012),
+                                  const SizedBox(width: 10),
+                                  Container(
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text('IRR',
+                                            style: MyTestStyles.Inter50014
+                                                .copyWith(color: Colors.green)),
+                                        const SizedBox(width: 4),
+                                        Icon(
+                                          Icons.info_outline,
+                                          color: Colors.green,
+                                          size: 16,
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                ],
                               ),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Container(
-                                height: 18,
+                            ),
+                            const SizedBox(width: 4),
+                            Expanded(
+                              child: Container(
+                                height: 24,
                                 child: Row(
                                   mainAxisSize: MainAxisSize.min,
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      'Net Yield',
-                                      style: TextStyle(
-                                        color: Color(0xFF475569),
-                                        fontSize: 12,
-                                        fontFamily: 'Inter',
-                                        fontWeight: FontWeight.w400,
-                                        height: 0.12,
-                                      ),
+                                      '13.11',
+                                      style: MyTestStyles.Inter50016,
                                     ),
-                                    const SizedBox(width: 10),
-                                    Container(
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.min,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            'IRR',
-                                            style: TextStyle(
-                                              color: Color(0xFF15803D),
-                                              fontSize: 12,
-                                              fontFamily: 'Inter',
-                                              fontWeight: FontWeight.w500,
-                                              height: 0.12,
-                                            ),
-                                          ),
-                                          const SizedBox(width: 4),
-                                          Text(
-                                            '􀅴',
-                                            style: TextStyle(
-                                              color: Color(0xFF15803D),
-                                              fontSize: 12,
-                                              fontFamily: 'SF Pro',
-                                              fontWeight: FontWeight.w500,
-                                              height: 0.12,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
+                                    const SizedBox(width: 2),
+                                    Text('%',
+                                        style: MyTestStyles.Inter50012.copyWith(
+                                            color: Colors.grey)),
                                   ],
                                 ),
                               ),
-                              const SizedBox(width: 4),
-                              Expanded(
-                                child: Container(
-                                  height: 24,
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        '13.11',
-                                        style: TextStyle(
-                                          color: Color(0xFF475569),
-                                          fontSize: 16,
-                                          fontFamily: 'Inter',
-                                          fontWeight: FontWeight.w500,
-                                          height: 0.09,
-                                        ),
-                                      ),
-                                      const SizedBox(width: 2),
-                                      Text(
-                                        '%',
-                                        style: TextStyle(
-                                          color: Color(0xFFA8A29E),
-                                          fontSize: 14,
-                                          fontFamily: 'Inter',
-                                          fontWeight: FontWeight.w500,
-                                          height: 0.11,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
-                        Container(
-                          width: double.infinity,
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 20, vertical: 16),
-                          decoration: BoxDecoration(
-                              // border: Border.only(
-                              //   left: BorderSide(),
-                              //   top: BorderSide(),
-                              //   right: BorderSide(),
-                              //   bottom: BorderSide(width: 1),
-                              // ),
-                              ),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              SizedBox(
-                                width: 155,
-                                child: Text(
-                                  'Tenure',
-                                  style: TextStyle(
-                                    color: Color(0xFF475569),
-                                    fontSize: 12,
-                                    fontFamily: 'Inter',
-                                    fontWeight: FontWeight.w400,
-                                    height: 0.12,
-                                  ),
+                      ),
+                      Divider(),
+                      Container(
+                        width: double.infinity,
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 16),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            SizedBox(
+                              width: 155,
+                              child: Text('Tenure',
+                                  style: MyTestStyles.Inter40012),
+                            ),
+                            const SizedBox(width: 4),
+                            Expanded(
+                              child: Container(
+                                height: 24,
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('61', style: MyTestStyles.Inter50016),
+                                    const SizedBox(width: 2),
+                                    Text('days',
+                                        style: MyTestStyles.Inter50014.copyWith(
+                                          color: Colors.grey,
+                                        )),
+                                  ],
                                 ),
                               ),
-                              const SizedBox(width: 4),
-                              Expanded(
-                                child: Container(
-                                  height: 24,
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        '61',
-                                        style: TextStyle(
-                                          color: Color(0xFF475569),
-                                          fontSize: 16,
-                                          fontFamily: 'Inter',
-                                          fontWeight: FontWeight.w500,
-                                          height: 0.09,
-                                        ),
-                                      ),
-                                      const SizedBox(width: 2),
-                                      Text(
-                                        'days',
-                                        style: TextStyle(
-                                          color: Color(0xFFA8A29E),
-                                          fontSize: 14,
-                                          fontFamily: 'Inter',
-                                          fontWeight: FontWeight.w500,
-                                          height: 0.11,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ],
