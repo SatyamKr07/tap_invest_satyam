@@ -4,6 +4,8 @@ import 'package:tap_invest/pages/deal_details_page/widgets/highlights.dart';
 import 'package:tap_invest/pages/deal_details_page/widgets/invt_data_widget.dart';
 import 'package:tap_invest/utils/my_text_styles.dart';
 
+import 'widgets/key_metrics.dart';
+
 class DealDetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -86,6 +88,8 @@ class DealDetailsPage extends StatelessWidget {
           Divider(thickness: 1),
           SizedBox(height: 24),
           Highlights(),
+          SizedBox(height: 32),
+          KeyMetrics(),
           SizedBox(height: 32),
         ],
       ),
