@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:tap_invest/pages/deal_details_page/widgets/active_deals_data_widget.dart';
 import 'package:tap_invest/pages/deal_details_page/widgets/clients_backed_by.dart';
+import 'package:tap_invest/pages/deal_details_page/widgets/documents.dart';
 import 'package:tap_invest/pages/deal_details_page/widgets/highlights.dart';
 import 'package:tap_invest/pages/deal_details_page/widgets/invt_data_widget.dart';
 import 'package:tap_invest/utils/my_text_styles.dart';
@@ -89,8 +91,19 @@ class DealDetailsPage extends StatelessWidget {
           SizedBox(height: 24),
           Highlights(),
           SizedBox(height: 32),
+          Divider(thickness: 1),
+          SizedBox(height: 24),
           KeyMetrics(),
           SizedBox(height: 32),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: ActiveDealsDataWidget(),
+          ),
+          SizedBox(height: 32),
+          Divider(thickness: 1),
+          SizedBox(height: 24),
+          Documents(),
+          SizedBox(height: 70),
         ],
       ),
     );
