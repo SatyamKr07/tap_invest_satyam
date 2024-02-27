@@ -2,6 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MyTestStyles {
+  static TextStyle get Inter40012 {
+    return TextStyle(
+      fontWeight: FontWeight.w400,
+      fontSize: 12,
+      fontFamily: GoogleFonts.inter().fontFamily,
+    );
+  }
+
   static TextStyle get Inter40014 {
     return TextStyle(
       fontWeight: FontWeight.w400,
@@ -30,6 +38,14 @@ class MyTestStyles {
     return TextStyle(
       fontWeight: FontWeight.w600,
       fontSize: 10,
+      fontFamily: GoogleFonts.inter().fontFamily,
+    );
+  }
+
+  static TextStyle get Inter60012 {
+    return TextStyle(
+      fontWeight: FontWeight.w600,
+      fontSize: 12,
       fontFamily: GoogleFonts.inter().fontFamily,
     );
   }
