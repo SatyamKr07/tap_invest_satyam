@@ -18,7 +18,7 @@ class TapToInvest extends StatelessWidget {
           bottom: 21,
         ),
         clipBehavior: Clip.antiAlias,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Colors.white,
           boxShadow: [
             BoxShadow(
@@ -66,7 +66,7 @@ class TapToInvest extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               clipBehavior: Clip.antiAlias,
               decoration: ShapeDecoration(
-                gradient: LinearGradient(
+                gradient: const LinearGradient(
                   begin: Alignment(0.00, -1.00),
                   end: Alignment(0, 1),
                   colors: [
@@ -85,7 +85,7 @@ class TapToInvest extends StatelessWidget {
               child: InkWell(
                 onTap: () => Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => PruchasingPage2()),
+                  MaterialPageRoute(builder: (context) => const PruchasingPage2()),
                 ),
                 child: Text('Tap to Invest',
                     style:

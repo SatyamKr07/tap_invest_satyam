@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:tap_invest/utils/my_text_styles.dart';
 
 class Highlights extends StatelessWidget {
+  const Highlights({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -10,15 +12,15 @@ class Highlights extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text("Highlights", style: MyTestStyles.Inter50016),
-          SizedBox(height: 16),
-          Container(
-            height: 200,
+          const SizedBox(height: 16),
+          SizedBox(
+            height: 160,
             child: ListView(
               shrinkWrap: true,
               scrollDirection: Axis.horizontal,
               children: [
-                story(),
-                story(),
+                story(context),
+                story(context),
               ],
             ),
           ),
@@ -27,16 +29,15 @@ class Highlights extends StatelessWidget {
     );
   }
 
-  Container story() {
+  Container story(context) {
     return Container(
-      width: 300,
-      height: 173,
+      width: MediaQuery.of(context).size.width - 80,
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
-      margin: EdgeInsets.only(right: 16),
+      margin: const EdgeInsets.only(right: 16),
       clipBehavior: Clip.antiAlias,
       decoration: ShapeDecoration(
         shape: RoundedRectangleBorder(
-          side: BorderSide(width: 1, color: Color(0xFFE7E5E4)),
+          side: const BorderSide(width: 1, color: Color(0xFFE7E5E4)),
           borderRadius: BorderRadius.circular(8),
         ),
       ),

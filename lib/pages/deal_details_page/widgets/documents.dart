@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:tap_invest/utils/my_text_styles.dart';
 
 class Documents extends StatelessWidget {
+  const Documents({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Container(
-          width: 360,
+          width: MediaQuery.of(context).size.width,
           height: 456,
           padding: const EdgeInsets.only(
             left: 20,
@@ -15,7 +17,7 @@ class Documents extends StatelessWidget {
             bottom: 36,
           ),
           clipBehavior: Clip.antiAlias,
-          decoration: BoxDecoration(),
+          decoration: const BoxDecoration(),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.start,
@@ -33,7 +35,7 @@ class Documents extends StatelessWidget {
                     'Read more about the company and see how they pitch to investors.',
                 trailingImage: 'assets/logos/arrow_down_in_circle.png',
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               _buildDocumentItem(
                 leadingImage: 'assets/logos/document.png',
                 titleText: 'Invoice Discounting Contract',
@@ -60,7 +62,7 @@ class Documents extends StatelessWidget {
       clipBehavior: Clip.antiAlias,
       decoration: ShapeDecoration(
         shape: RoundedRectangleBorder(
-          side: BorderSide(width: 1, color: Color(0xFFE7E5E4)),
+          side: const BorderSide(width: 1, color: Color(0xFFE7E5E4)),
           borderRadius: BorderRadius.circular(8),
         ),
       ),
@@ -80,7 +82,7 @@ class Documents extends StatelessWidget {
                     width: 48,
                     height: 48,
                     decoration: ShapeDecoration(
-                      color: Color(0xFFE7E5E4),
+                      color: const Color(0xFFE7E5E4),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(99),
                       ),
@@ -110,7 +112,7 @@ class Documents extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            SizedBox(height: 8),
+                            const SizedBox(height: 8),
                             Text(
                               subtitleText,
                               style: MyTestStyles.Inter40014.copyWith(

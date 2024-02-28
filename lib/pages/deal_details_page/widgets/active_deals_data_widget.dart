@@ -2,34 +2,34 @@ import 'package:flutter/material.dart';
 import 'package:tap_invest/utils/my_text_styles.dart';
 
 class ActiveDealsDataWidget extends StatelessWidget {
-  ActiveDealsDataWidget({Key? key}) : super(key: key);
+  const ActiveDealsDataWidget({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color(0xfD6D3D1),
+      color: const Color(0x0fd6d3d1),
       child: GridView.count(
         shrinkWrap: true,
         crossAxisCount: 2,
         crossAxisSpacing: 0,
         mainAxisSpacing: 0,
         childAspectRatio: 2,
-        physics: NeverScrollableScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         children: [
           Container(
-            padding: EdgeInsets.only(left: 16.0),
+            padding: const EdgeInsets.only(left: 16.0),
             decoration: BoxDecoration(
               border: Border.all(
                 color: Colors.grey[300]!,
                 width: 1.0,
               ),
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(10.0),
               ),
             ),
             child: buildTextWithSpans('MIN INVT', '₹ ', '1 ', 'Lakh'),
           ),
           Container(
-            padding: EdgeInsets.only(left: 16.0),
+            padding: const EdgeInsets.only(left: 16.0),
             decoration: BoxDecoration(
               border: Border(
                 top: BorderSide(
@@ -49,14 +49,14 @@ class ActiveDealsDataWidget extends StatelessWidget {
                   width: 1.0,
                 ),
               ),
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                 topRight: Radius.circular(10.0),
               ),
             ),
             child: buildTextWithSpans('TENURE', '', '61 ', 'days'),
           ),
           Container(
-            padding: EdgeInsets.only(left: 16.0),
+            padding: const EdgeInsets.only(left: 16.0),
             decoration: BoxDecoration(
               border: Border(
                 top: BorderSide(
@@ -76,14 +76,14 @@ class ActiveDealsDataWidget extends StatelessWidget {
                   width: 1.0,
                 ),
               ),
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                 bottomLeft: Radius.circular(10.0),
               ),
             ),
             child: buildTextWithSpans('NET YIELD', '', '13.23 ', '%'),
           ),
           Container(
-            padding: EdgeInsets.only(left: 16.0),
+            padding: const EdgeInsets.only(left: 16.0),
             decoration: BoxDecoration(
               border: Border(
                 top: BorderSide(
@@ -103,7 +103,7 @@ class ActiveDealsDataWidget extends StatelessWidget {
                   width: 1.0,
                 ),
               ),
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                 bottomRight: Radius.circular(10.0),
               ),
             ),
@@ -121,7 +121,7 @@ class ActiveDealsDataWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(mainText, style: MyTestStyles.Inter60010),
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
         RichText(
           text: TextSpan(
             children: [

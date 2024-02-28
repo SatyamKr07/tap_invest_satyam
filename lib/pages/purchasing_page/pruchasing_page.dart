@@ -18,7 +18,7 @@ class PruchasingPage2 extends StatelessWidget {
         shrinkWrap: true,
         children: [
           Container(
-            padding: EdgeInsets.only(left: 24, top: 24),
+            padding: const EdgeInsets.only(left: 24, top: 24),
             width: 320,
             child: Row(
               mainAxisSize: MainAxisSize.min,
@@ -30,12 +30,12 @@ class PruchasingPage2 extends StatelessWidget {
                   height: 36,
                   clipBehavior: Clip.antiAlias,
                   decoration: ShapeDecoration(
-                    color: Color(0x1E15803D),
+                    color: const Color(0x1E15803D),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(999),
                     ),
                   ),
-                  child: Column(
+                  child: const Column(
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -68,7 +68,7 @@ class PruchasingPage2 extends StatelessWidget {
                     Text("Agrizy ",
                         style: MyTestStyles.Inter40014.copyWith(
                             color: Colors.grey)),
-                    Icon(Icons.arrow_back, color: Colors.grey, size: 16),
+                    const Icon(Icons.arrow_back, color: Colors.grey, size: 16),
                     Text(" Keshav Industries",
                         style: MyTestStyles.Inter40014.copyWith(
                           color: Colors.grey,
@@ -78,9 +78,9 @@ class PruchasingPage2 extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 24),
-          Divider(thickness: 1),
-          SizedBox(height: 24),
+          const SizedBox(height: 24),
+          const Divider(thickness: 1),
+          const SizedBox(height: 24),
           SizedBox(
             width: double.infinity,
             child: Text(
@@ -106,7 +106,7 @@ class PruchasingPage2 extends StatelessWidget {
                         textAlign: TextAlign.center,
                         autofocus: true,
                         keyboardType: TextInputType.number,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           hintText: 'Min 50000',
                           enabledBorder: UnderlineInputBorder(
                             borderSide: BorderSide(color: Colors.transparent),
@@ -125,9 +125,9 @@ class PruchasingPage2 extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 24),
-          Divider(thickness: 1),
-          SizedBox(height: 24),
+          const SizedBox(height: 24),
+          const Divider(thickness: 1),
+          const SizedBox(height: 24),
           Container(
             width: double.infinity,
             clipBehavior: Clip.antiAlias,
@@ -140,7 +140,7 @@ class PruchasingPage2 extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
+                SizedBox(
                   width: double.infinity,
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -161,7 +161,7 @@ class PruchasingPage2 extends StatelessWidget {
                                   style: MyTestStyles.Inter40012),
                             ),
                             const SizedBox(width: 4),
-                            Container(
+                            SizedBox(
                               height: 24,
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
@@ -190,7 +190,7 @@ class PruchasingPage2 extends StatelessWidget {
                                                   style:
                                                       MyTestStyles.Inter50016,
                                                 )
-                                              : Text("-");
+                                              : const Text("-");
                                       // Text(
                                       //   purchasingProvider.totalReturns.currencyFormat().toString(),
                                       //   style: MyTestStyles.Inter50016,
@@ -203,7 +203,7 @@ class PruchasingPage2 extends StatelessWidget {
                           ],
                         ),
                       ),
-                      Divider(),
+                      const Divider(),
                       Container(
                         width: double.infinity,
                         padding: const EdgeInsets.symmetric(
@@ -213,7 +213,7 @@ class PruchasingPage2 extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Container(
+                            SizedBox(
                               height: 18,
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
@@ -235,7 +235,7 @@ class PruchasingPage2 extends StatelessWidget {
                                             style: MyTestStyles.Inter50014
                                                 .copyWith(color: Colors.green)),
                                         const SizedBox(width: 4),
-                                        Icon(
+                                        const Icon(
                                           Icons.info_outline,
                                           color: Colors.green,
                                           size: 16,
@@ -248,7 +248,7 @@ class PruchasingPage2 extends StatelessWidget {
                             ),
                             const SizedBox(width: 4),
                             Expanded(
-                              child: Container(
+                              child: SizedBox(
                                 height: 24,
                                 child: Row(
                                   mainAxisSize: MainAxisSize.min,
@@ -270,7 +270,7 @@ class PruchasingPage2 extends StatelessWidget {
                           ],
                         ),
                       ),
-                      Divider(),
+                      const Divider(),
                       Container(
                         width: double.infinity,
                         padding: const EdgeInsets.symmetric(
@@ -287,7 +287,7 @@ class PruchasingPage2 extends StatelessWidget {
                             ),
                             const SizedBox(width: 4),
                             Expanded(
-                              child: Container(
+                              child: SizedBox(
                                 height: 24,
                                 child: Row(
                                   mainAxisSize: MainAxisSize.min,
@@ -323,7 +323,7 @@ class PruchasingPage2 extends StatelessWidget {
           right: 20,
           bottom: 24,
         ),
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Color(0xFFFBFBF6),
           boxShadow: [
             BoxShadow(
@@ -345,7 +345,7 @@ class PruchasingPage2 extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
+            SizedBox(
               width: double.infinity,
               child: Row(
                 mainAxisSize: MainAxisSize.min,
@@ -362,7 +362,7 @@ class PruchasingPage2 extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(width: 8),
-                  Expanded(
+                  const Expanded(
                     child: SizedBox(
                       child: Opacity(
                         opacity: 0.90,
@@ -384,7 +384,7 @@ class PruchasingPage2 extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10),
-            SwipeToPayWidget()
+            const SwipeToPayWidget()
           ],
         ),
       ),

@@ -7,6 +7,8 @@ import '../../../providers/pruchasing_provider.dart';
 import '../../../utils/my_text_styles.dart';
 
 class SwipeToPayWidget extends StatefulWidget {
+  const SwipeToPayWidget({super.key});
+
   @override
   _SwipeToPayWidgetState createState() => _SwipeToPayWidgetState();
 }
@@ -53,7 +55,7 @@ class _SwipeToPayWidgetState extends State<SwipeToPayWidget> {
                           MaterialPageRoute(
                             builder: (context) => ChangeNotifierProvider(
                               create: (context) => PaymentProvider(),
-                              child: PaymentDonePage(),
+                              child: const PaymentDonePage(),
                             ),
                           ),
                         );
@@ -75,16 +77,16 @@ class _SwipeToPayWidgetState extends State<SwipeToPayWidget> {
                 width: _dragPosition < 50 ? 50 : _dragPosition,
                 height: 50.0,
                 decoration: ShapeDecoration(
-                  color: Color(0xFF15803D),
+                  color: const Color(0xFF15803D),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(4),
                   ),
                 ),
-                child: Row(
+                child: const Row(
                   children: [
                     Spacer(),
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                      padding: EdgeInsets.symmetric(horizontal: 10.0),
                       child: Icon(Icons.arrow_forward, color: Colors.white),
                     ),
                   ],

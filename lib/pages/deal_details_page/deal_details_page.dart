@@ -10,6 +10,8 @@ import 'package:tap_invest/utils/my_text_styles.dart';
 import 'widgets/key_metrics.dart';
 
 class DealDetailsPage extends StatelessWidget {
+  const DealDetailsPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +25,7 @@ class DealDetailsPage extends StatelessWidget {
           leading: Padding(
             padding: const EdgeInsets.only(left: 24.0),
             child: IconButton(
-              icon: Icon(
+              icon: const Icon(
                 Icons.arrow_back,
                 color: Colors.green,
                 size: 20,
@@ -41,27 +43,27 @@ class DealDetailsPage extends StatelessWidget {
               padding: const EdgeInsets.only(left: 24.0, right: 24),
               child: ListView(
                 shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 children: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Image.asset('assets/logos/logo.png',
                           height: 100, width: 100),
-                      SizedBox(
+                      const SizedBox(
                         height: 12,
                       ),
                       Row(
                         children: [
                           Text("Agrizy ", style: MyTestStyles.Inter60018),
-                          Icon(Icons.arrow_back, color: Colors.grey, size: 20),
+                          const Icon(Icons.arrow_back, color: Colors.grey, size: 20),
                           Text(" Keshav Industries",
                               style: MyTestStyles.Inter60018.copyWith(
                                 color: Colors.grey,
                               )),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 12,
                       ),
                       Text(
@@ -71,43 +73,43 @@ class DealDetailsPage extends StatelessWidget {
                         style: MyTestStyles.Inter40014.copyWith(
                             color: Colors.grey),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 12,
                       ),
                     ],
                   ),
-                  InvtDataWidget(),
+                  const InvtDataWidget(),
                 ],
               ),
             ),
-            SizedBox(height: 16),
-            Divider(thickness: 1),
-            SizedBox(height: 16),
-            Padding(
+            const SizedBox(height: 16),
+            const Divider(thickness: 1),
+            const SizedBox(height: 16),
+            const Padding(
               padding:
-                  const EdgeInsets.symmetric(horizontal: 24.0, vertical: 0),
+                  EdgeInsets.symmetric(horizontal: 24.0, vertical: 0),
               child: ClientsBackedBy(),
             ),
-            SizedBox(height: 16),
-            Divider(thickness: 1),
-            SizedBox(height: 24),
-            Highlights(),
-            SizedBox(height: 32),
-            Divider(thickness: 1),
-            SizedBox(height: 24),
-            KeyMetrics(),
-            SizedBox(height: 32),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            const SizedBox(height: 16),
+            const Divider(thickness: 1),
+            const SizedBox(height: 24),
+            const Highlights(),
+            const SizedBox(height: 32),
+            const Divider(thickness: 1),
+            const SizedBox(height: 24),
+            const KeyMetrics(),
+            const SizedBox(height: 32),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.0),
               child: ActiveDealsDataWidget(),
             ),
-            SizedBox(height: 32),
-            Divider(thickness: 1),
-            SizedBox(height: 24),
-            Documents(),
-            SizedBox(height: 70),
+            const SizedBox(height: 32),
+            const Divider(thickness: 1),
+            const SizedBox(height: 24),
+            const Documents(),
+            const SizedBox(height: 70),
           ],
         ),
-        bottomNavigationBar: TapToInvest());
+        bottomNavigationBar: const TapToInvest());
   }
 }

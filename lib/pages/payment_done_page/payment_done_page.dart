@@ -4,6 +4,8 @@ import 'package:tap_invest/providers/payment_provider.dart';
 import 'package:tap_invest/utils/my_text_styles.dart';
 
 class PaymentDonePage extends StatefulWidget {
+  const PaymentDonePage({super.key});
+
   @override
   State<PaymentDonePage> createState() => _PaymentDonePageState();
 }
@@ -20,19 +22,19 @@ class _PaymentDonePageState extends State<PaymentDonePage> {
     return Scaffold(
       body: Container(
         width: double.infinity,
-        decoration: BoxDecoration(color: Color(0xFF15803D)),
+        decoration: const BoxDecoration(color: Color(0xFF15803D)),
         child: Column(
           children: [
-            SizedBox(height: 150),
+            const SizedBox(height: 150),
             Container(
               width: 111,
               height: 111,
               decoration: ShapeDecoration(
-                color: Color(0xFF116631),
+                color: const Color(0xFF116631),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(13.50),
                 ),
-                shadows: [
+                shadows: const [
                   BoxShadow(
                     color: Color(0x0A000000),
                     blurRadius: 10.80,
@@ -46,7 +48,7 @@ class _PaymentDonePageState extends State<PaymentDonePage> {
                 children: [
                   Positioned(
                     top: 32,
-                    child: Container(
+                    child: SizedBox(
                       width: 47.22,
                       height: 47.22,
                       child: Consumer<PaymentProvider>(
@@ -67,7 +69,7 @@ class _PaymentDonePageState extends State<PaymentDonePage> {
                 ],
               ),
             ),
-            SizedBox(height: 32),
+            const SizedBox(height: 32),
             Column(
               children: [
                 Consumer<PaymentProvider>(
@@ -81,14 +83,14 @@ class _PaymentDonePageState extends State<PaymentDonePage> {
                     ),
                   ),
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 Text(
                   'You are almost there!',
                   textAlign: TextAlign.center,
                   style: MyTestStyles.Inter40012.copyWith(
                       color: Colors.white.withOpacity(0.70)),
                 ),
-                SizedBox(height: 4),
+                const SizedBox(height: 4),
                 Text(
                   'Do not leave this page, or press the back button.',
                   textAlign: TextAlign.center,

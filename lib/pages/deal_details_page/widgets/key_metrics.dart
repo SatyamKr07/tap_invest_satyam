@@ -16,7 +16,7 @@ class KeyMetrics extends StatelessWidget {
             style: MyTestStyles.Inter50016,
           ),
         ),
-        Container(
+        SizedBox(
           height: 30,
           child: DefaultTabController(
             length: 4,
@@ -32,7 +32,7 @@ class KeyMetrics extends StatelessWidget {
                 tabs: [
                   Tab(
                     child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
                       ),
@@ -47,7 +47,7 @@ class KeyMetrics extends StatelessWidget {
                   ),
                   Tab(
                     child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
                       ),
@@ -62,7 +62,7 @@ class KeyMetrics extends StatelessWidget {
                   ),
                   Tab(
                     child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
                       ),
@@ -77,7 +77,7 @@ class KeyMetrics extends StatelessWidget {
                   ),
                   Tab(
                     child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
                       ),

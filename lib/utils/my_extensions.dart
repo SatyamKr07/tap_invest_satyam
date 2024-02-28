@@ -6,8 +6,8 @@ extension DoubleExtension on num {
     try {
       int decimalDigits = 0;
 //      debugPrint('lmm --? '+ this.toString().contains('.').toString() +" --" + this.toString());
-      if (this.toString().contains('.')) {
-        int jj = int.parse(this.toString().split('.')[1]);
+      if (toString().contains('.')) {
+        int jj = int.parse(toString().split('.')[1]);
         //      debugPrint('sd -> '+ jj.toString());
         if (jj > 0) {
           decimalDigits = 2;

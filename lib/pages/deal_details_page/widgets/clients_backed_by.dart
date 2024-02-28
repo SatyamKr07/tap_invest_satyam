@@ -12,27 +12,27 @@ class ClientsBackedBy extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text("Clients", style: MyTestStyles.Inter50016),
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Image.asset('assets/logos/google_logo.png'),
-            SizedBox(width: 24),
+            const SizedBox(width: 24),
             Image.asset('assets/logos/google_logo.png'),
-            SizedBox(width: 24),
+            const SizedBox(width: 24),
             Image.asset('assets/logos/google_logo.png'),
           ],
         ),
-        SizedBox(height: 24),
+        const SizedBox(height: 24),
         Text("Backed By", style: MyTestStyles.Inter50016),
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Image.asset('assets/logos/google_logo.png'),
-            SizedBox(width: 24),
+            const SizedBox(width: 24),
             Image.asset('assets/logos/google_logo.png'),
-            SizedBox(width: 24),
+            const SizedBox(width: 24),
             Image.asset('assets/logos/google_logo.png'),
           ],
         )
