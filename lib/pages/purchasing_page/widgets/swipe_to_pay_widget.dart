@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tap_invest/pages/payment_done_page/payment_done_page.dart';
+import 'package:tap_invest/providers/payment_provider.dart';
 import '../../../providers/pruchasing_provider.dart';
 import '../../../utils/my_text_styles.dart';
 
@@ -41,12 +42,15 @@ class _SwipeToPayWidgetState extends State<SwipeToPayWidget> {
                 setState(() {
                   _dragPosition += details.delta.dx;
                   if (_dragPosition > MediaQuery.of(context).size.width - 100) {
-                    int amount = purchasingProvider.getTotalReturns();
-                    if (amount >= 50000) {
+                    if (purchasingProvider.totalReturns >= 50000) {
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => PaymentDonePage()),
+                          builder: (context) => ChangeNotifierProvider(
+                            create: (context) => PaymentProvider(),
+                            child: PaymentDonePage(),
+                          ),
+                        ),
                       );
                     } else {
                       _dragPosition = 50;

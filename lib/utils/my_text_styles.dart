@@ -74,6 +74,14 @@ class MyTestStyles {
     );
   }
 
+  static TextStyle get Inter60016 {
+    return TextStyle(
+      fontWeight: FontWeight.w600,
+      fontSize: 16,
+      fontFamily: GoogleFonts.inter().fontFamily,
+    );
+  }
+
   static TextStyle get Inter60018 {
     return TextStyle(
       fontWeight: FontWeight.w600,
