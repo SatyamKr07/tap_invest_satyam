@@ -42,7 +42,7 @@ class _SwipeToPayWidgetState extends State<SwipeToPayWidget> {
                   _dragPosition += details.delta.dx;
                   if (_dragPosition > MediaQuery.of(context).size.width - 100) {
                     int amount = purchasingProvider.getTotalReturns();
-                    if (amount > 50000) {
+                    if (amount >= 50000) {
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(

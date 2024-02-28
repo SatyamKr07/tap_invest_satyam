@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class PurchasingProvider extends ChangeNotifier {
-  num totalReturns = 56555;
+  num totalReturns = 0;
   TextEditingController tecAmountField = TextEditingController()..text = "";
   getTotalReturns() {
-    return 500000;
+    return totalReturns;
   }
 
   setAmount(int value) {
