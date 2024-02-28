@@ -102,6 +102,7 @@ class PruchasingPage2 extends StatelessWidget {
                   child: Consumer<PurchasingProvider>(
                     builder: (context, purchasingProvider, _) {
                       return TextField(
+                        controller: purchasingProvider.tecAmountField,
                         textAlign: TextAlign.center,
                         autofocus: true,
                         keyboardType: TextInputType.number,
@@ -170,11 +171,31 @@ class PruchasingPage2 extends StatelessWidget {
                                   Text('₹',
                                       style: MyTestStyles.Inter50014.copyWith(
                                           color: Colors.grey)),
-                                  Text(
-                                    purchasingProvider.totalReturns
-                                        .currencyFormat()
-                                        .toString(),
-                                    style: MyTestStyles.Inter50016,
+                                  Consumer<PurchasingProvider>(
+                                    builder: (context, purchasingProvider, _) {
+                                      return purchasingProvider
+                                                  .tecAmountField.value.text ==
+                                              ""
+                                          ? Text(
+                                              '56,554',
+                                              style: MyTestStyles.Inter50016,
+                                            )
+                                          : purchasingProvider.totalReturns >
+                                                  50000
+                                              ? Text(
+                                                  purchasingProvider
+                                                      .totalReturns
+                                                      .currencyFormat()
+                                                      .toString(),
+                                                  style:
+                                                      MyTestStyles.Inter50016,
+                                                )
+                                              : Text("-");
+                                      // Text(
+                                      //   purchasingProvider.totalReturns.currencyFormat().toString(),
+                                      //   style: MyTestStyles.Inter50016,
+                                      // );
+                                    },
                                   ),
                                 ],
                               ),

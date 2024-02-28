@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tap_invest/pages/payment_done_page/payment_done_page.dart';
-import 'package:tap_invest/pages/purchasing_page/pruchasing_page.dart';
-
 import '../../../providers/pruchasing_provider.dart';
 import '../../../utils/my_text_styles.dart';
 

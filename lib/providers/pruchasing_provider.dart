@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class PurchasingProvider extends ChangeNotifier {
   num totalReturns = 56555;
+  TextEditingController tecAmountField = TextEditingController()..text = "";
   getTotalReturns() {
     return 500000;
   }
