@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:tap_invest/pages/payment_done_page/payment_done_page.dart';
 import 'package:tap_invest/providers/payment_provider.dart';
@@ -12,6 +13,7 @@ class SwipeToPayWidget extends StatefulWidget {
 
 class _SwipeToPayWidgetState extends State<SwipeToPayWidget> {
   double _dragPosition = 50.0;
+  bool _isDragEnabled = false;
 
   @override
   Widget build(BuildContext context) {
@@ -39,23 +41,34 @@ class _SwipeToPayWidgetState extends State<SwipeToPayWidget> {
             left: 0,
             child: GestureDetector(
               onHorizontalDragUpdate: (details) {
-                setState(() {
-                  _dragPosition += details.delta.dx;
-                  if (_dragPosition > MediaQuery.of(context).size.width - 100) {
-                    if (purchasingProvider.totalReturns >= 50000) {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => ChangeNotifierProvider(
-                            create: (context) => PaymentProvider(),
-                            child: PaymentDonePage(),
+                if (_isDragEnabled) {
+                  setState(() {
+                    _dragPosition += details.delta.dx;
+                    if (_dragPosition >
+                        MediaQuery.of(context).size.width - 100) {
+                      if (purchasingProvider.totalReturns >= 50000) {
+                        HapticFeedback.mediumImpact(); // A
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ChangeNotifierProvider(
+                              create: (context) => PaymentProvider(),
+                              child: PaymentDonePage(),
+                            ),
                           ),
-                        ),
-                      );
-                    } else {
-                      _dragPosition = 50;
+                        );
+                      } else {
+                        _isDragEnabled = false;
+                        _dragPosition = 50;
+                        HapticFeedback.heavyImpact();
+                      }
                     }
-                  }
+                  });
+                }
+              },
+              onHorizontalDragEnd: (_) {
+                setState(() {
+                  _isDragEnabled = true;
                 });
               },
               child: Container(
